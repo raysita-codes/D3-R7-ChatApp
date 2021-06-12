@@ -35,12 +35,10 @@ const styles = StyleSheet.create({
     },
 
     time: {
-        fontSize: 15,
+        fontSize: 14,
         color: 'grey',
+        marginRight: 10,
     }
-
-
-
 })
 
 export default styles;
