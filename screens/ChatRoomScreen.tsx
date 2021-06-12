@@ -5,6 +5,7 @@ import { FlatList } from "react-native-gesture-handler";
 import chatRoomData from "../data/Chats"
 import ChatMessage from "../components/ChatMessage";
 import BG from '../assets/images/BG.png';
+import InputBox from "../components/InputBox";
 
 const ChatRoomScreen = () => {
 const route = useRoute();
@@ -14,8 +15,11 @@ const route = useRoute();
                 data={chatRoomData.messages}
                 renderItem={({item}) => <ChatMessage message={item} />}
                 inverted
-            />
+             />
+              <InputBox />
         </ImageBackground>
+
+      
     )
 }
 
