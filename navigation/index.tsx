@@ -9,9 +9,10 @@ import MainTabNavigator from './MainTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import Colors from "../constants/Colors";
 import { View } from 'react-native';
-import { Octicons, MaterialCommunityIcons, FontAwesome5, MaterialIcons } from '@expo/vector-icons';
+import { Octicons, MaterialCommunityIcons, FontAwesome5, MaterialIcons, AntDesign } from '@expo/vector-icons';
 import ChatRoomScreen from '../screens/ChatRoomScreen';
 import ContactsScreen from '../screens/ContactsScreen';
+import StartScreen from '../screens/StartScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -36,8 +37,9 @@ function RootNavigator() {
       headerTitleAlign: 'left',
       headerTitleStyle: {
         fontWeight: 'bold'
-      }
+      },
      }}>
+      <Stack.Screen name="StartScreen" component={StartScreen} options={{ headerShown: false }} />
       <Stack.Screen
         name="Root" 
         component={MainTabNavigator} 
