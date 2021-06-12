@@ -1,43 +1,64 @@
-/**
- * Learn more about createBottomTabNavigator:
- * https://reactnavigation.org/docs/bottom-tab-navigator
- */
-
 import { Ionicons } from '@expo/vector-icons';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import { MainTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
-const BottomTab = createBottomTabNavigator<BottomTabParamList>();
+import { Fontisto } from '@expo/vector-icons';
 
-export default function BottomTabNavigator() {
+const MainTab = createMaterialTopTabNavigator<MainTabParamList>();
+
+export default function MainTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
-    <BottomTab.Navigator
-      initialRouteName="TabOne"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
-      <BottomTab.Screen
-        name="TabOne"
+    <MainTab.Navigator
+      initialRouteName="Chats"
+      tabBarOptions={{  
+        // [colorScheme] prepares for dark/light mode
+        activeTintColor: Colors[colorScheme].background,
+        style: {
+          backgroundColor: Colors[colorScheme].tint,
+          },
+        indicatorStyle: {
+          backgroundColor: Colors[colorScheme].background,
+          height: 4,
+        },
+        labelStyle: {
+          fontWeight: 'bold',
+        },
+        // The reason for showIcon is because tabBarOptions defaulted it to false
+        showIcon: true
+        }}>
+      <MainTab.Screen
+        name="Camera"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => 
+          <Fontisto name="camera" 
+          color={color} 
+          size={18} />,
+          tabBarLabel: () => null // To remove the text, "camera". when you want to render tabBarLabel, return nothing
         }}
       />
-      <BottomTab.Screen
-        name="TabTwo"
+      <MainTab.Screen
+        name="Chats"
         component={TabTwoNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-        }}
       />
-    </BottomTab.Navigator>
+      <MainTab.Screen
+        name="Status"
+        component={TabOneNavigator}
+      />
+      <MainTab.Screen
+        name="Calls"
+        component={TabOneNavigator}
+      />
+    </MainTab.Navigator>
   );
 }
 
