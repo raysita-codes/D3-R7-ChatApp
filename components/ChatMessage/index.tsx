@@ -27,7 +27,7 @@ const ChatMessage = (props: ChatMessageProps) => {
                 ]}>
                 {/* conditionally render */}
                 {!isMyMessage() && <Text style={style.name}>{message.user.name}</Text>}
-                <Text style={style.message}>{message.content}</Text>
+                <Text>{message.content}</Text>
                 <Text style={style.time}>{moment(message.createdAt).fromNow()}</Text>
             </View>
         </View>

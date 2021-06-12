@@ -18,10 +18,6 @@ const style = StyleSheet.create({
         marginBottom: 4,
     },
 
-    message: {
-
-    },
-
     time: {
         alignSelf: 'flex-end',
         color: 'grey',
