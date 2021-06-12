@@ -2,20 +2,20 @@ export default {
 	id: '1',
 	users: [{
 		id: 'u1',
-		name: 'Vadim',
+		name: 'Ryujin',
 		imageUri: 'https://image.shutterstock.com/image-vector/super-mom-hero-superhero-cartoon-600w-720015928.jpg',
 	}, {
 		id: 'u2',
-		name: 'Lukas',
+		name: 'Ryujin',
 		imageUri: 'https://image.shutterstock.com/image-vector/super-mom-hero-superhero-cartoon-600w-720015928.jpg',
 	}],
 	messages: [{
 		id: 'm1',
 		content: 'How are you, Lukas!',
-		createdAt: '2020-10-10T12:48:00.000Z',
+		createdAt: '2021-06-11T12:48:00.000Z',
 		user: {
 			id: 'u1',
-			name: 'Vadim',
+			name: 'Ryujin',
 		},
 	}, {
 		id: 'm2',

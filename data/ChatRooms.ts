@@ -2,7 +2,7 @@ export default [{
   id: '1',
   users: [{
     id: 'u1',
-    name: 'Vadim',
+    name: 'Ryujin',
     imageUri: 'https://image.shutterstock.com/image-vector/super-mom-hero-superhero-cartoon-600w-720015928.jpg',
   }, {
     id: 'u2',

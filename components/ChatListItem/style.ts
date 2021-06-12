@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: 'grey',
         marginRight: 10,
-    }
+    },
 })
 
 export default styles;
